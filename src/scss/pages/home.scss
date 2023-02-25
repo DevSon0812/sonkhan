@@ -1,0 +1,57 @@
+.newarivals {
+  &-title {
+    color: #333;
+    font-family: InterstateWGL-Black;
+    font-size: $font-size-3xl;
+    line-height: calc($leading-6 + 8px);
+    font-weight: $font-weight-black;
+    letter-spacing: 0.02em;
+    margin: 50px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $font-family-base;
+  }
+  &-list {
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex: none;
+    overflow: auto;
+    gap: 32px;
+    &::-webkit-scrollbar {
+      display: none;
+      width: 0;
+    }
+    & > * {
+      scroll-snap-align: start;
+    }
+  }
+}
+
+.product {
+  cursor: pointer;
+  @include flex-col;
+  width: calc(100% / 6 - 32px);
+  @include table {
+    width: calc(100% / 8 - 32px);
+  }
+  @include table {
+    width: calc(100% / 2 - 32px);
+  }
+  flex: none;
+  scroll-snap-align: start;
+  &-img {
+  }
+  &-desc {
+    font-size: $font-size-medium;
+    line-height: $leading-6;
+    font-weight: $font-weight-medium;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  &-price {
+    font-weight: $font-weight-Extrabold;
+  }
+}
